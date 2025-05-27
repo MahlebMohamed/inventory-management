@@ -69,9 +69,9 @@ export async function updateCategory(
   id: string,
   name: string,
   email: string,
-  description?: string,
+  description: string,
 ) {
-  if (!id || !name || !email) return;
+  if (!id) return;
 
   try {
     const association = await getAssociations(email);
@@ -81,7 +81,7 @@ export async function updateCategory(
       where: { id, associationId: association.id },
       data: {
         name,
-        description: description || "",
+        description,
         associationId: association.id,
       },
     });

@@ -18,9 +18,9 @@ model Association {
 }
 
 model Category {
-  id          String  @id @default(uuid())
+  id          String @id @default(uuid())
   name        String
-  description String?
+  description String
 
   associationId String?      @default(uuid())
   association   Association? @relation(fields: [associationId], references: [id])
