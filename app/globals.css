@@ -123,6 +123,15 @@
   }
 }
 
+
+button:hover,
+button:active,
+button:focus {
+  cursor: pointer;
+}
+
+
+
 @keyframes wiggle {
 
   0%,

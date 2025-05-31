@@ -9,7 +9,7 @@ import {
   deleteCategory,
   readCategories,
   updateCategory,
-} from "../actions";
+} from "../actions/category.actions";
 import { toast } from "react-toastify";
 import { Category } from "@prisma/client";
 import EmptyState from "@/components/EmptyState";
@@ -75,6 +75,7 @@ export default function Page() {
 
   useEffect(() => {
     loadCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [email]);
 
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { checkAndAddAssociation } from "@/app/actions";
+import { checkAndAddAssociation } from "@/app/actions/category.actions";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { ListTree, Menu, PackagePlus, ShoppingBasket, X } from "lucide-react";
 import Link from "next/link";
@@ -14,7 +14,8 @@ export default function Navbar() {
 
   const pathname = usePathname();
   const navlinks = [
-    { href: "/new-produit", label: "Nouveau produit", icon: ShoppingBasket },
+    { href: "/products", label: "Produit", icon: ShoppingBasket },
+    { href: "/new-product", label: "Nouveau produit", icon: PackagePlus },
     { href: "/category", label: "Category", icon: ListTree },
   ];
   const [menuOpen, setMenuOpen] = useState(false);
